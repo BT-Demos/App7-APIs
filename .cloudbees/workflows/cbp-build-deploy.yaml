@@ -25,9 +25,9 @@ jobs:
       - name: register-build-artifacts
         uses: https://github.com/cloudbees-io/register-build-artifact@v1
         with:
-          name: App5-APIs
+          name: App7-APIs
           version: 1.0.0
-          url: docker.io/App5/App5-APIs:1.0.0
+          url: docker.io/App7/App7-APIs:1.0.0
 
   deploy:
     needs: [build]
@@ -37,7 +37,7 @@ jobs:
         kind: deploy
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          name: App5-APIs
+          name: App7-APIs
           version: 1.0.0
-          url: docker.io/App5/App5-APIs:1.0.0
+          url: docker.io/App7/App7-APIs:1.0.0
           target-environment: "qa"
